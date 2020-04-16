@@ -8,11 +8,42 @@
 
 jeremy = User.create(email: "jeremy.m.perry@gmail.com", username: "armideonokawa", password: "abc123")
 
-category = Category.create(name: "Technology")
+categories = [
+    ["Technology"],
+    ["Educational"],
+    ["Business"],
+    ["Hobby"],
+    ["Gaming"]
+]
+
+categories.each do |name| 
+    Category.create(name: name)
+end
+
+
+
 
 
 project1 = Project.create(user_id: jeremy.id, 
-                          category_id: category.id, 
+                          category_id: 1, 
                           name: "Some Project",
+                          description: "This project which doesnt have a name field, is a production based app built in js, with a Ruby backend",
+                          complete: "false")
+
+project2 = Project.create(user_id: jeremy.id, 
+                          category_id: 1, 
+                          name: "Almost there",
+                          description: "This project which doesnt have a name field, is a production based app built in js, with a Ruby backend",
+                          complete: "false")
+
+project3 = Project.create(user_id: jeremy.id, 
+                          category_id: 1, 
+                          name: "Second to last",
+                          description: "This project which doesnt have a name field, is a production based app built in js, with a Ruby backend",
+                          complete: "false")
+
+project4 = Project.create(user_id: jeremy.id, 
+                          category_id: 1, 
+                          name: "Last One",
                           description: "This project which doesnt have a name field, is a production based app built in js, with a Ruby backend",
                           complete: "false")

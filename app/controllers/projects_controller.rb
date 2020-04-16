@@ -1,5 +1,10 @@
 class ProjectsController < ApplicationController
-    before_action :authorized, only: [:create]
+    # before_action :authorized, only: [:create]
+
+    def index
+        @projects = Project.all
+        render json: @projects
+    end
 
     def show
         @project = Project.find(params[:id])
@@ -7,7 +12,7 @@ class ProjectsController < ApplicationController
     end
 
     def create
-        @project = @user.projects.create(project_params)
+        @project = @user.Project.create(project_params)
         render json: @project
     end
 

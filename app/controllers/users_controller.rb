@@ -18,21 +18,18 @@ class UsersController < ApplicationController
 
   end
 
-  def login
-    @user = User.find_by(username: params[:username])
-    if @user && @user.authenticate(params[:password])
-      render json: @user
-    else
-      render json: {message: "Invalid username or password"}
-    end
-  end
+   def login
+     @user = User.find_by(username: params[:username])
+     if @user && @user.authenticate(params[:password])
+       wristband = encode_token({user_id: @user.id})
+       render json: {user: UserSerializer.new(@user), token: wristband}
+     else
+       render json: {message: "Invalid username or password"}
+     end
+   end
 
 
-
-
-
-
-  private
+   private
 
   def user_params
     params.permit(:username, :password, :email)
