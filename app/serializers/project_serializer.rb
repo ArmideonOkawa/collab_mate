@@ -1,3 +1,4 @@
 class ProjectSerializer < ActiveModel::Serializer
-  attributes :id
+  attributes :id, :description
+  belongs_to :user
 end

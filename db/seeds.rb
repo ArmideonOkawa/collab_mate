@@ -7,3 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 jeremy = User.create(email: "jeremy.m.perry@gmail.com", username: "armideonokawa", password: "abc123")
+
+category = Category.create(name: "Technology")
+
+
+project1 = Project.create(user_id: jeremy.id, 
+                          category_id: category.id, 
+                          name: "Some Project",
+                          description: "This project which doesnt have a name field, is a production based app built in js, with a Ruby backend",
+                          complete: "false")

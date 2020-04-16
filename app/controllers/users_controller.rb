@@ -1,15 +1,17 @@
 class UsersController < ApplicationController
-
-  def show
-    @user = User.find(params[:id])
-    render json: @user
-  end
+ before_action :authorized, only: [:persist]
+ 
+  def persist
+     wristband = encode_token({user_id: @user.id})
+     render json: {user: UserSerializer.new(@user), token: wristband}
+   end
 
   def create
 
     @user = User.create(user_params)
     if @user.valid?
-      render json: @user, status: 201
+      wristband = encode_token({user_id: @user.id})
+      render json: {user: UserSerializer.new(@user), token: wristband}, status: 201
     else
       render json: {message: "Invalid username"}
     end
@@ -33,7 +35,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:username, :password)
+    params.permit(:username, :password, :email)
   end
 
 end

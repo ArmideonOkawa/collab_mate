@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_04_14_204219) do
   create_table "projects", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "category_id", null: false
+    t.string "name"
     t.text "description"
     t.boolean "complete"
     t.datetime "created_at", precision: 6, null: false
