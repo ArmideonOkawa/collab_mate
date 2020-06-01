@@ -2,8 +2,8 @@ class ProjectsController < ApplicationController
     # before_action :authorized, only: [:create]
 
     def index
-        @projects = Project.all
-        render json: @projects
+        projects = Project.all
+        render json: projects
     end
 
     def show
