@@ -7,13 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 jeremy = User.create(email: "jeremy.m.perry@gmail.com", username: "armideonokawa", password: "abc123")
+diana = User.create(email: "fullstackmiguel@gmail.com", username: "deedee", password: "abc123")
 
 categories = [
-    ["Technology"],
-    ["Educational"],
-    ["Business"],
-    ["Hobby"],
-    ["Gaming"]
+    "Technology",
+    "Educational",
+    "Business",
+    "Hobby",
+    "Gaming"
 ]
 
 categories.each do |name| 
@@ -30,7 +31,7 @@ project1 = Project.create(user_id: jeremy.id,
                           description: "This project which doesnt have a name field, is a production based app built in js, with a Ruby backend",
                           complete: "false")
 
-project2 = Project.create(user_id: jeremy.id, 
+project2 = Project.create(user_id: diana.id, 
                           category_id: 1, 
                           name: "Almost there",
                           description: "This project which doesnt have a name field, is a production based app built in js, with a Ruby backend",
@@ -42,7 +43,7 @@ project3 = Project.create(user_id: jeremy.id,
                           description: "This project which doesnt have a name field, is a production based app built in js, with a Ruby backend",
                           complete: "false")
 
-project4 = Project.create(user_id: jeremy.id, 
+project4 = Project.create(user_id: diana.id, 
                           category_id: 1, 
                           name: "Last One",
                           description: "This project which doesnt have a name field, is a production based app built in js, with a Ruby backend",
