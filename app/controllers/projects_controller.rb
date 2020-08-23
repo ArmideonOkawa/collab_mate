@@ -16,9 +16,14 @@ class ProjectsController < ApplicationController
         render json: @project
     end
 
+    def destroy 
+        @project = Project.find(params[:id])
+        @project.destroy 
+    end
+
     private
 
     def project_params
-      params.permit(:user_id, :category_id, :name, :description, :complete)
+      params.permit(:name, :description, :complete)
     end
 end
