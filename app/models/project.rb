@@ -3,4 +3,5 @@ class Project < ApplicationRecord
   belongs_to :category
   has_many :comments
   has_many :users, through: :comments
+  has_many :ideas
 end

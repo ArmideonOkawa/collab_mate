@@ -5,7 +5,6 @@ class CreateProjects < ActiveRecord::Migration[6.0]
       t.belongs_to :category, null: false, foreign_key: true
       t.string :name
       t.text :description
-      t.boolean :complete
 
       t.timestamps
     end

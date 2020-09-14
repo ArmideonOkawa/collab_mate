@@ -21,9 +21,13 @@ class ProjectsController < ApplicationController
         @project.destroy 
     end
 
+    #custom methods
+
+   
+
     private
 
     def project_params
-      params.permit(:name, :description, :complete)
+      params.permit(:name, :description, :user_id)
     end
 end

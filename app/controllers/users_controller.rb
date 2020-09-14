@@ -32,6 +32,13 @@ def index
   render json: @users
 end
 
+#custom methods
+def projects
+  @user = User.find(params[:id])
+  @projects = @user.projects
+  render json: @projects
+end
+
   private
 
     def user_params

@@ -28,23 +28,19 @@ end
 project1 = Project.create(user_id: jeremy.id, 
                           category_id: 1, 
                           name: "Some Project",
-                          description: "This project which doesnt have a name field, is a production based app built in js, with a Ruby backend",
-                          complete: "false")
+                          description: "This project which doesnt have a name field, is a production based app built in js, with a Ruby backend")
 
 project2 = Project.create(user_id: diana.id, 
                           category_id: 1, 
                           name: "Almost there",
-                          description: "This project which doesnt have a name field, is a production based app built in js, with a Ruby backend",
-                          complete: "false")
+                          description: "This project which doesnt have a name field, is a production based app built in js, with a Ruby backend")
 
 project3 = Project.create(user_id: jeremy.id, 
                           category_id: 1, 
                           name: "Second to last",
-                          description: "This project which doesnt have a name field, is a production based app built in js, with a Ruby backend",
-                          complete: "false")
+                          description: "This project which doesnt have a name field, is a production based app built in js, with a Ruby backend")
 
 project4 = Project.create(user_id: diana.id, 
                           category_id: 1, 
                           name: "Last One",
-                          description: "This project which doesnt have a name field, is a production based app built in js, with a Ruby backend",
-                          complete: "false")
+                          description: "This project which doesnt have a name field, is a production based app built in js, with a Ruby backend")
