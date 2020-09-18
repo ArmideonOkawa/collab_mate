@@ -1,6 +1,7 @@
 class User < ApplicationRecord
         has_many :projects
         has_many :comments
+        has_many :ideas
         has_secure_password
         validates :username, length: { minimum: 4 }
         validates :username, uniqueness: { case_sensitive: false} 

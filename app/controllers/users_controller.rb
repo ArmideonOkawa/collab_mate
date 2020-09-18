@@ -29,7 +29,7 @@ end
 
 def index
   @users = User.all
-  render json: @users
+  render json: @users, status: :ok 
 end
 
 #custom methods
@@ -39,6 +39,10 @@ def projects
   render json: @projects
 end
 
+# def project_create
+#   @user = User.find(params[:id])
+#   @project = @user.Project.create
+# end
   private
 
     def user_params

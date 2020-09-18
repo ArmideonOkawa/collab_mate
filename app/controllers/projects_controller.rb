@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
     end
 
     def create
-        @project = @user.Project.create(project_params)
+        @project = Project.create(project_params)
         render json: @project
     end
 
@@ -28,6 +28,6 @@ class ProjectsController < ApplicationController
     private
 
     def project_params
-      params.permit(:name, :description, :user_id)
+      params.permit(:name, :description, :user_id, :category_id)
     end
 end
